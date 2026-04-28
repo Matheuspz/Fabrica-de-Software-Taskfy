@@ -9,10 +9,11 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <div class="container text-center">
-
-        <button onclick="AddTask()" class="btn">Criar Tarefa</button>
-        
+<br>
+<br>
+    <div class="container text-center ">
+        <input type="text" id="taskNameInput">
+        <button onclick="AddTask()" id="addTaskBtn" class="btn">Criar Tarefa</button>
 
         <div class="row">
             <div class="col bg-success" id="new">
@@ -20,11 +21,10 @@
 
             </div>
 
-            <div class="col bg-primary" id="working">
+            <!--<div class="col bg-primary" id="working">
                 <h1>WORKING</h1>
 
-            </div>
-
+            </div> -->
 
             <div class="col bg-danger" id="done">
                 <h1>DONE</h1>

@@ -16,30 +16,36 @@ function CreateId() {
 }
 
 function AddTask() {
-    try {
-        const task = document.createElement("div");
-        let id = CreateId();
-        console.log(id)
-        task.innerHTML = `
-        <div class="col bg-danger" id="${id}">
-            <div class="col">
-                NOME / ${id}
+    let name = document.getElementById("taskNameInput").value;
+    if(name.trim() !== "") {
+        try {
+            const task = document.createElement("div");
+            let id = CreateId();
+            //console.log(id)
+
+            task.innerHTML = `
+        <div class="col bg-white border border-2 border-dark" id="${id}">
+            <div class="col" id="taskName">
+                ${name}
             </div>
             <div class="col">
                 <button onclick="FinishTask('${id}')" class="btn">Concluir</button>
                 <button onclick="EditTask('${id}')" class="btn">Editar</button>
                 <button onclick="RemoveTask('${id}')" class="btn">Remover</button>
             </div>
-
+            <div class="col">
+                <input type="text" id="taskNameEditInput">
+            </div>
         </div>
         `;
-        document.getElementById("new").appendChild(task);
+            document.getElementById("new").appendChild(task);
+            document.getElementById("taskNameInput").value = "";
+            //console.log(document.getElementById(id));
+            //console.log(counter);
 
-        //console.log(document.getElementById(id));
-        //console.log(counter);
+        } catch (error) {
 
-    } catch (error) {
-        return;
+        }
     }
 }
 
@@ -60,5 +66,14 @@ function RemoveTask(id) {
 }
 
 function EditTask(id) {
+
+    const container = document.getElementById(id);
+    const taskNameDiv = container.querySelector("#taskName");
+    const nameEdit = container.querySelector("#taskNameEditInput");
+
+    if(nameEdit.value.trim() !== "") {
+        taskNameDiv.textContent = nameEdit.value;
+        nameEdit.value = "";
+    }
 
 }
