@@ -9,30 +9,21 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
+<div class="container text-start m-2"><h1>Taskfy</h1></div>
 <br>
-<br>
-    <div class="container text-center ">
+    <div class="container text-center">
         <input type="text" id="taskNameInput">
-        <button onclick="AddTask()" id="addTaskBtn" class="btn">Criar Tarefa</button>
-
-        <div class="row">
-            <div class="col bg-success" id="new">
-                <h1>NEW</h1>
+        <button onclick="AddTask()" id="addTaskBtn" class="btn"><b>Criar Tarefa</b></button>
+        <div class="row p-2">
+            <div class="col border border-1 border-dark" id="new">
+                <h1>Tarefas Pendentes</h1>
 
             </div>
 
-            <!--<div class="col bg-primary" id="working">
-                <h1>WORKING</h1>
-
-            </div> -->
-
-            <div class="col bg-danger" id="done">
-                <h1>DONE</h1>
+            <div class="col border border-1 border-dark" id="done">
+                <h1>Tarefas Completas</h1>
                 
             </div>
-
-
-
         </div>
     </div>
 

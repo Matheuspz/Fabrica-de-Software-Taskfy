@@ -24,8 +24,8 @@ function AddTask() {
             //console.log(id)
 
             task.innerHTML = `
-        <div class="col bg-white border border-2 border-dark" id="${id}">
-            <div class="col" id="taskName">
+        <div class="col bg-white border border-1 border-dark p-2" id="${id}">
+            <div class="col fs-4" id="taskName">
                 ${name}
             </div>
             <div class="col">
